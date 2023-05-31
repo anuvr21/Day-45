@@ -1,0 +1,30 @@
+<!--Write a JavaScript program to convert a specified number into an array of digits.-->
+<html>
+    <head>
+        <title>Number To Digits</title>
+    </head>
+    <body>
+        <script>
+            function numDigits()
+            {
+                let num=document.getElementById("number").value;
+                const digits=[];
+                while(num>0)
+                {
+                    let rem=num%10;
+                    digits.push(rem);
+                    num= Math.floor(num/10);
+                }
+                digits.reverse();
+                for(let n in digits)
+                {
+                    document.write(digits[n]+"\t");
+                }
+                
+            }
+        </script>
+        <input type="text" id="number" name="number">
+        <button type="button" id="convert" name="convert" onclick="numDigits();">Convert</button>
+        <p id="result" name="result"></p>
+    </body>
+</html>
